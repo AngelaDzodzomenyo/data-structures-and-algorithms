@@ -8,10 +8,11 @@ Write a function named `addOne` that takes an array of numbers, and returns a ne
 Use `forEach` to loop over the input array and work with each value.  Push the new value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
 
-
 const addOne = (arr) => {
   const newArray =  [];
-  arr.forEach(number => newArray.push(number + 1));
+  arr.forEach(number => {
+    newArray.push(number + 1);
+  });
   return newArray;
 };
 
@@ -25,7 +26,9 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   const newExclamationArray = [];
-  arr.forEach(string => newExclamationArray.push(string + '!'));
+  arr.forEach(string => {
+    newExclamationArray.push(string + '!');
+  });
   return newExclamationArray;
 };
 
@@ -38,7 +41,11 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-  // Solution code here...
+  const newAllCaps = [];
+  arr.forEach(string => {
+    newAllCaps.push(string.toUpperCase());
+  });
+  return newAllCaps;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,11 +59,17 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  // Solution code here...
+  const newWord = word.toUpperCase() + '!';
+  return newWord;
 };
 
 const speaker = (words, callback) => {
-  // Solution code here...
+  const newWordArray = [];
+
+  words.forEach(string =>{
+    newWordArray.push(callback(string));
+  });
+  return newWordArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,11 +89,14 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for(let i = 0; 1 < times; i++){
+    callback(arr,num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -111,7 +127,6 @@ const createList = (availableItems) => {
   });
   return foodArray;
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
