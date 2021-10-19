@@ -55,9 +55,9 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  return charArray.sort( (a,b) => {
+  return charArray.sort( (a, b) => {
     if(b.children.length === a.children.length) {
-      return b.house- a.house;
+      return b.house - a.house;
     } else {
       return a.children.length - b.children.length;
     }
@@ -72,8 +72,8 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  let regexCheck = /w/g;
-  return regexCheck.test(str);
+  let regexChecker = /w/g;
+  return regexChecker.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -89,8 +89,8 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  let regexCheck = /[0-9]/g;
-  return regexCheck.test(input);
+  let regexChecker = /[0-9]/g;
+  return regexChecker.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -101,8 +101,8 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  let regexCheck = /(world)/g;
-  return regexCheck.test(input);
+  let regexChecker = /(world)/g;
+  return regexChecker.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,7 +114,7 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  return str.match(/\b[A-Z].*?\b/g) || []
+  return str.match(/\b[A-Z].*?\b/g) || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -123,7 +123,9 @@ CHALLENGE 6
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 
-const citiesAtoJ = (arr) => {arr.filter(cityNames => cityNames.match(/^[A-J]\w*\b/g));
+const citiesAtoJ = (arr) => {
+  return arr.filter(cityNames => cityNames.match(/^[A-J]\w*\b/g));
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
