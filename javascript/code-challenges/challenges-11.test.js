@@ -70,6 +70,7 @@ const totalSum = (input) => {
   return total;
 };
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -161,7 +162,14 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  let names = [];
+  data.filter(character => {
+    if(character.gender === 'female' || character.gender === 'male') {
+      names.push(character.name);
+    }
+
+  });
+  return names.join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -171,7 +179,16 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  data.sort((personA, personB) => {
+    if(+personA.height > +personB.height) {
+      return 1;
+    } else if (+personA.height < +personB.height) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  return data[0].name;
 };
 
 /* ------------------------------------------------------------------------------------------------
