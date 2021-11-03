@@ -53,9 +53,7 @@ Write a function named standardizePhoneNumbers that takes in an array of phone n
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
-const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
-};
+const standardizePhoneNumbers = (arr) => arr.map(string => string.replace(/\D/g, ''));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
@@ -66,7 +64,13 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  let newString = str;
+  for(let i = str.length -1; i>=0; i--) {
+    if(i % 2 === 0) {
+      newString = newString.replace(newString[i], '');
+    }
+  }
+  return newString;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,7 +80,17 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  let count=0;
+  arr.forEach(string => {
+    if (string.includes(':)')){
+      count++;
+    }
+  });
+  if(count === arr.length){
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
